@@ -1,0 +1,48 @@
+---
+import { Button } from "@/components/ui/button";
+import DownloadIcon from "./icons/DownloadIcon.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+---
+
+<div
+  class="w-full lg:min-h-[600px] space-y-10 flex flex-col items-center justify-center"
+>
+  <section
+    id="about"
+    class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+  >
+    <div class="space-y-4">
+      <h2 class="text-5xl font-bold text-black">Hola, soy Angel Almanza</h2>
+      <h3 class="text-3xl font-semibold text-gray-500">
+        Desarrollador Full Stack
+      </h3>
+      <p class="text-lg text-black">
+        Soy un desarrollador Full Stack con experiencia en tecnologías como
+        JavaScript, React, Node.js, Express, Firebase, y más. Construyo
+        aplicaciones Web funcionales, accesibles y responsivas con tecnologías
+        modernas. Me encanta aprender cosas nuevas y compartir conocimiento.
+      </p>
+      <div class="flex space-x-4">
+        <Button>Contactame</Button>
+        <Button>
+          <DownloadIcon />
+          Descargar CV
+        </Button>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <img
+        src="/images/me.jpeg"
+        alt="Angel Almanza"
+        class="rounded-full w-72 h-72 object-cover border-4 border-gray-950"
+        loading="lazy"
+      />
+    </div>
+  </section>
+  <div class="w-full flex items-center justify-center gap-x-4">
+    <GithubIcon />
+    <LinkedinIcon />
+  </div>
+  <div class="w-full border-t border-gray-200"></div>
+</div>

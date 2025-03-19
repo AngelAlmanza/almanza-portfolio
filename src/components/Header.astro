@@ -1,0 +1,39 @@
+---
+import DownloadIcon from "./icons/DownloadIcon.astro";
+import { Button } from "./ui/button";
+
+const links = [
+  { href: "#about", text: "Sobre mí" },
+  { href: "#education", text: "Educación" },
+  { href: "#experience", text: "Experiencia" },
+  { href: "#skills", text: "Habilidades" },
+  { href: "#projects", text: "Proyectos" },
+  { href: "#contact", text: "Contacto" },
+];
+---
+
+<header
+  class="w-full flex justify-between items-center p-4 border-b-1 border-gray-200"
+>
+  <h2 class="text-black font-bold text-2xl">Portafolio</h2>
+  <nav class="hidden lg:block">
+    <ul class="flex space-x-4">
+      {
+        links.map((link) => (
+          <li class="text-black font-medium">
+            <a
+              href={link.href}
+              class="block px-2 py-1.5 rounded hover:bg-gray-200 transition-colors"
+            >
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <Button>
+    <DownloadIcon />
+    Descargar CV
+  </Button>
+</header>
