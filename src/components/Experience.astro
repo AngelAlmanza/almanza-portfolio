@@ -1,0 +1,64 @@
+---
+import { Badge } from "./ui/badge";
+import Separator from "./Separator.astro";
+import CalendarIcon from "./icons/CalendarIcon.astro";
+import BagIcon from "./icons/BagIcon.astro";
+
+const experience = [
+  {
+    title: "Desarrollador Full Stack",
+    company: "Promatic Soft",
+    date: "2024 - Actualidad",
+    description:
+      "Desarrollo de aplicaciones Web accesibles y funcionales para multiples clientes de la empresa con distintas necesidades. Experiencia en tecnologías como React, Node.JS y Firebase.",
+    skills: [
+      "React",
+      "Node.JS",
+      "Firebase",
+      "TypeScript",
+      "Express.JS",
+      "AWS",
+      "Next.JS",
+      "MySQL",
+    ],
+  },
+  {
+    title: "Desarrollador Móvil",
+    company: "Empresa X",
+    date: "2023-2024",
+    description:
+      "Desarrollo de aplicaciones móviles con React Native. Experiencia en desarrollo de aplicaciones móviles para Android y iOS.",
+    skills: ["React Native", "TypeScript", "Laravel"],
+  },
+];
+---
+
+<section>
+  <div class="mb-4 flex items-center gap-2">
+    <BagIcon />
+    <h2 class="text-3xl font-bold text-black pb-1">Experiencia</h2>
+  </div>
+  <div class="w-full space-y-8">
+    {
+      experience.map((exp) => (
+        <div class="grid grid-cols-[1fr_2fr] gap-4">
+          <div class="flex gap-2 text-gray-500">
+            <CalendarIcon />
+            <p>{exp.date}</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-black">{exp.title}</h3>
+            <h5 class="text-lg font-medium text-black">{exp.company}</h5>
+            <p class="text-base font-base text-gray-600">{exp.description}</p>
+            <div class="flex items-center flex-wrap gap-2 mt-2">
+              {exp.skills.map((skill) => (
+                <Badge>{skill}</Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+    <Separator />
+  </div>
+</section>
