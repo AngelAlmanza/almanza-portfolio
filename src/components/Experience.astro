@@ -34,14 +34,14 @@ const experience = [
 ---
 
 <section>
-  <div class="mb-4 flex items-center gap-2">
+  <div class="flex items-center gap-2 my-8">
     <BagIcon />
     <h2 class="text-3xl font-bold text-black pb-1">Experiencia</h2>
   </div>
   <div class="w-full space-y-8">
     {
       experience.map((exp) => (
-        <div class="grid grid-cols-[1fr_2fr] gap-4">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-[1fr_2fr]">
           <div class="flex gap-2 text-gray-500">
             <CalendarIcon />
             <p>{exp.date}</p>
