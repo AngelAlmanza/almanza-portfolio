@@ -1,0 +1,46 @@
+---
+import CodeIcon from "./icons/CodeIcon.astro";
+import Separator from "./Separator.astro";
+import { Badge } from "./ui/badge";
+
+const skills = [
+  {
+    category: "Frontend",
+    skills: ["React", "Next.JS", "Vue", "TailwindCSS", "TypeScript"],
+  },
+  {
+    category: "Backend",
+    skills: ["Node.JS", "Express.JS", "Laravel", ".NET"],
+  },
+  {
+    category: "Base de datos",
+    skills: ["MySQL", "SQLServer", "Firebase"],
+  },
+  {
+    category: "Otros",
+    skills: ["AWS", "Docker", "Git"],
+  },
+];
+---
+
+<section>
+  <div class="flex items-center gap-2 my-8">
+    <CodeIcon />
+    <h2 class="text-3xl font-bold text-black pb-1">Skills y Tecnologías</h2>
+  </div>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    {
+      skills.map((skill) => (
+        <article class="border p-8 rounded-lg shadow space-y-8">
+          <h3 class="text-2xl font-bold text-black">{skill.category}</h3>
+          <div class="flex flex-wrap items-center gap-2">
+            {skill.skills.map((s) => (
+              <Badge>{s}</Badge>
+            ))}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+  <Separator />
+</section>
