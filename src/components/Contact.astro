@@ -1,0 +1,58 @@
+---
+import GithubIcon from "./icons/GithubIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import MessageSquareIcon from "./icons/MessageSquareIcon.astro";
+import EmailIcon from "./icons/EmailIcon.astro";
+import Separator from "./Separator.astro";
+import { ContactForm } from "./react/ContactForm";
+---
+
+<section>
+  <div class="flex items-center gap-2 my-8">
+    <MessageSquareIcon />
+    <h2 class="text-3xl font-bold text-black pb-1">Contactame</h2>
+  </div>
+  <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+    <div>
+      <p>
+        Actualmente estoy disponible para nuevos proyectos y colaboraciones. Si
+        tienes alguna idea en mente o simplemente quieres saludar, no dudes en
+        contactarme.
+      </p>
+      <ul class="text-lg space-y-4 mt-4 text-black">
+        <li>
+          <a
+            href="mailto:almanza.angel245@gmail.com"
+            target="_blank"
+            class="inline-flex items-center gap-x-2"
+          >
+            <EmailIcon />
+            Correo Electrónico
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            class="inline-flex items-center gap-x-2"
+          >
+            <LinkedinIcon />
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.github.com"
+            target="_blank"
+            class="inline-flex items-center gap-x-2"
+          >
+            <GithubIcon />
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+    <ContactForm client:load />
+  </div>
+  <Separator />
+</section>
